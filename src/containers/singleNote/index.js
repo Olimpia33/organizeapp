@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import style from './style.scss';
-import Button from '../buttons/index';
-import ItemForm from '../itemForm/index';
+import Button from '../../components/buttons/index';
+import ItemForm from '../../components/itemForm/index';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as notesActions from '../../actions/notesActions';
 import {Link} from 'react-router';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-class Notes extends Component {
+class Note extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
@@ -117,7 +117,7 @@ class Notes extends Component {
 	}
 }
 
-Notes.propTypes = {
+Note.propTypes = {
   note: PropTypes.object,
 	notes: PropTypes.array,
 	params: PropTypes.number,
@@ -150,4 +150,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Notes);
+export default connect(mapStateToProps, mapDispatchToProps)(Note);

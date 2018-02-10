@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import style from '../components/tabs/style.scss';
-import Tabs from '../components/tabs/index';
-import TaskContainer from './taskContainer';
-import NotesContainer from './notesContainer';
+import style from '../../components/tabs/style.scss';
+import Tabs from '../../components/tabs/index';
+import TaskContainer from '../tasksList/index';
+import NotesContainer from '../notesList/index';
 
 class Organizer extends React.Component {
     constructor(props){

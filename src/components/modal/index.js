@@ -61,7 +61,7 @@ ModalContainer.propTypes = {
     disabled: PropTypes.bool,
     callback: PropTypes.func,
     children: PropTypes.object,
-addButton: PropTypes.bool
+    addButton: PropTypes.bool
 };
 
 const mapStateToProps = (state, ownProps) => {

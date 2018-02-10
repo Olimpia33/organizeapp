@@ -29,16 +29,16 @@ class Navbar extends Component {
 			<div className={isClicked ?
 				style.mobileHeader : style.header} >
 				<div
-				className={style.hamburgerMenu}
-				onClick={() => this.handleClick()}
+					className={style.hamburgerMenu}
+					onClick={() => this.handleClick()}
 				>
-				<a
-					className={`${style.hamburgerToggle} ${isClicked ?
-					style.active : null}`}
-					href="#"
-				>
-					<span></span>
-				</a>
+					<a
+						className={`${style.hamburgerToggle} ${isClicked ?
+						style.active : null}`}
+						href="#"
+					>
+						<span></span>
+					</a>
 				</div>
 				<nav className={isClicked ?
 					style.navbarMobile : style.navbar}>

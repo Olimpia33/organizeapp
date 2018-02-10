@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import style from './style.scss';
-import ProgressBar from '../progress-bar/index';
-import Rating from '../rating/index';
+import ProgressBar from '../../components/progress-bar/index';
+import Rating from '../../components/rating/index';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as progressTaskActions from '../../actions/progressTaskActions';
@@ -13,14 +13,14 @@ class Summary extends Component {
 		super(props);
 	}
 
-countPercent (count, item)  {
-	if( item === 0 || item < 0) {
-		return false;
-	}
+	countPercent (count, item) {
+		if( item === 0 || item < 0) {
+			return false;
+		}
 
-	const counter = count/item * 100;
-	return counter.toFixed(0);
-}
+		const counter = count/item * 100;
+		return counter.toFixed(0);
+	}
 
 	render() {
 
@@ -53,23 +53,22 @@ Summary.propTypes = {
   counter: PropTypes.number.isRequired,
   counterTask: PropTypes.number.isRequired,
   tasks: PropTypes.array.isRequired
-
 };
 
-function mapStateToProps(state, ownProps){
+const mapStateToProps = (state, ownProps) => {
 	const { tasks } = state;
     const { progressTask: { counter: counterTask } } = state;
     return {
         counterTask,
         tasks
     };
-}
+};
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return {
     progressTask: bindActionCreators(progressTaskActions, dispatch),
     taskActions: bindActionCreators(taskActions, dispatch)
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Summary);

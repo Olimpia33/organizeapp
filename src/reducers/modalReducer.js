@@ -14,12 +14,3 @@ export function modal( state = {isShowing: false}, action) {
 		return state;
 	}
 }
-
-export function item (state=null, action) {
-	switch (action.type) {
-		case types.SET_ITEM:
-			return action.item;
-		default:
-			return state;
-	}
-}

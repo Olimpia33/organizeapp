@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import List from '../components/list/index';
-import globals from '../styles/globals.scss';
-import ToggleButton from '../components/toggle-button/index';
-import ModalContainer from '../components/modal/index';
-import ItemForm from '../components/itemForm/index';
-import EmptyList from '../components/emptyList/index';
+import List from '../../components/list/index';
+import globals from '../../styles/globals.scss';
+import ToggleButton from '../../components/toggle-button/index';
+import ModalContainer from '../../components/modal/index';
+import ItemForm from '../../components/itemForm/index';
+import EmptyList from '../../components/emptyList/index';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as taskActions from '../actions/taskActions';
-import * as modalActions from '../actions/modalActions';
-import * as progressTaskActions from '../actions/progressTaskActions';
+import * as taskActions from '../../actions/taskActions';
+import * as modalActions from '../../actions/modalActions';
+import * as progressTaskActions from '../../actions/progressTaskActions';
 
 class TaskContainer extends Component {
 	constructor(props){
@@ -138,20 +138,20 @@ TaskContainer.propTypes = {
 	progressTask: PropTypes.object.isRequired
 };
 
-function mapStateToProps(state, ownProps){
+const mapStateToProps = (state, ownProps) => {
 	const { tasks } = state;
 
     return {
       tasks
     };
-}
+};
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators(taskActions, dispatch),
     modals: bindActionCreators(modalActions, dispatch),
     progressTask: bindActionCreators(progressTaskActions, dispatch)
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskContainer);

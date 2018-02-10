@@ -24,8 +24,7 @@ const TextInput = ({
                 placeholder={placeholder}
                 label={label}
                 onChange={callback}
-                className={`${error && `{style.bordeError}`} ${inputWrapper}`}
-                />
+                className={`${error && `{style.bordeError}`} ${inputWrapper}`}/>
                 {children}
                 {error && <div className={style.error}>{error}</div>}
         </div>

@@ -53,7 +53,3 @@ export const  loadNotesList = () => {
       });
   };
 };
-
-
-
-

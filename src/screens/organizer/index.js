@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Organizer from '../../containers/organizer.js';
-import Summary from '../../components/summary/index';
+import Organizer from '../../containers/tabsOrganizer/index';
+import Summary from '../../containers/summary/index';
 
 class OrganizerPage extends React.Component {
 	render() {

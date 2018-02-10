@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import globals from '../styles/globals.scss';
-import List from '../components/list/index';
-import Button from '../components/buttons/index';
-import ModalContainer from '../components/modal/index';
-import ItemForm from '../components/itemForm/index';
-import EmptyList from '../components/emptyList/index';
+import globals from '../../styles/globals.scss';
+import List from '../../components/list/index';
+import Button from '../../components/buttons/index';
+import ModalContainer from '../../components/modal/index';
+import ItemForm from '../../components/itemForm/index';
+import EmptyList from '../../components/emptyList/index';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as notesActions from '../actions/notesActions';
-import * as modalActions from '../actions/modalActions';
+import * as notesActions from '../../actions/notesActions';
+import * as modalActions from '../../actions/modalActions';
 
 class NotesContainer extends Component {
 	constructor(props){
