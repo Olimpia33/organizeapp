@@ -1,0 +1,39 @@
+@import '../../styles/globals.scss';
+
+.wrapper {
+	width: 100%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	height: 300px;
+}
+
+.title {
+	font-size: 2.5em;
+	color: $rose;
+	font-weight: bold;
+	padding: 10px;
+}
+
+.subtitle {
+	font-size: 1.5em;
+	color: $mainColor;
+	font-style: italic;
+}
+
+
+.appear {
+  opacity: 0;
+  transform:   translate(-250px,0);
+  transform: translate3d(-250px,0,0)
+}
+
+.appearActive {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+  transform:   translate(0,0);
+  transform: translate3d(0,0,0);
+  transition-property: transform, opacity;
+  transition-duration: 500ms;
+}

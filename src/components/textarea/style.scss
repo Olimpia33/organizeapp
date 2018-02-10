@@ -1,0 +1,9 @@
+@import '../../styles/variables.scss';
+
+.borderError {
+  border: solid 1px $buttons;
+}
+
+.error {
+ 	@extend .error;
+}

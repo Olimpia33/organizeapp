@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.input {
+  display: block;
+}
+
+.borderError {
+  border: solid 1px $buttons;
+}
+
+.error {
+  @extend .error;
+  bottom: 100px;
+}

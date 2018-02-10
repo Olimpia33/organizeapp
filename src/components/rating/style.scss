@@ -1,0 +1,13 @@
+@import '../../styles/globals.scss';
+
+.item {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  padding-top: 8px;
+  background-color: $rose;
+  border: none;
+  color: $mainColor;
+  font-size: 0.6em;
+}

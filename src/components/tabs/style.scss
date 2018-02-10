@@ -1,0 +1,51 @@
+@import '../../styles/globals.scss';
+
+.main {
+  width: 100%;
+  position: relative;
+  @include desktop {
+    display: flex;
+  }
+}
+
+.tabs {
+	background-color: $mainColor;
+  @include desktop {
+    width: 300px;
+    min-height: calc(100vh - 150px);
+    padding: 30px;
+  }
+}
+
+.tab {
+  color: $white;
+  display: inline-block;
+  padding: 5px;
+  width: 33%;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  @include desktop {
+    padding: 5px;
+    display: block;
+    width: 100%;
+    vertical-align: baseline;
+    display: flex;
+    &:hover {
+      color: $rose;
+      text-decoration: underline;
+    }
+  }
+}
+
+.link {
+  color: $white;
+}
+
+.content {
+  @include desktop {
+    width: 60%;
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+}

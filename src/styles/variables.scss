@@ -1,0 +1,73 @@
+/*COLORS*/
+
+$mainColor: #1D223B;
+$progressBar: #87E7FD;
+$buttons: #DDC5BF;
+$square: #4979D7;
+
+$white: #fff;
+$black: #000;
+$black2: #191919;
+$grey: #d3d3d3;
+$shadowGrey: #888;
+
+$rose: #DDC5BF;
+$hover: #FDFCFA;
+$lightgreen: #D0DADB;
+$errors: #FF0000;
+
+
+.btn {
+	display: block;
+	width: 50%;;
+	height: 40px;
+	padding: 5px;
+	background-color: $buttons;
+	border: none;
+	color: $white;
+	font-size: 0.8rem;
+	cursor: pointer;
+  text-align: center;
+}
+
+
+.textarea {
+  display: block;
+  margin: auto;
+  margin-top: 45px;
+  width: 80%;
+  height: 200px;
+  padding: 15px;
+}
+
+.contactInputs {
+  margin: 5px auto;
+  width: 100%;
+  border: 1px solid $rose;
+  padding: 10px;
+  font-style: italic
+}
+
+.error {
+  color: $white;
+  font-size: 0.7em;
+  background-color: $errors;
+  border: 1px solid $errors;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2px 0;
+  width: 100px;
+  height: 50px;
+  position: relative;
+  bottom: 260px;
+
+  &:before {
+    content: ' ';
+    border-style: solid;
+    position: absolute;
+    border-color: $errors transparent transparent transparent;
+    border-width: 8px 8px 0px 8px;
+    bottom: -8px;
+    right: 15px;
+  }
+}

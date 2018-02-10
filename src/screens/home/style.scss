@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+
+.main {
+	font-family: sans-serif;
+	color: $black2;
+	width: 100%;
+	min-height: calc(100vh - 140px);
+
+	a {
+		text-decoration: none;
+	}
+}
+
+h1 {
+	text-align: center;
+	text-transform: uppercase;
+	padding: 50px 0;
+}
+
+h4 {
+	text-align: center;
+	text-transform: uppercase;
+	padding: 15px;
+}
+
+.homeButton {
+  @extend .btn;
+  width: 25%;
+	margin: 15px auto;
+}
+

@@ -1,0 +1,54 @@
+@import '../../styles/globals.scss';
+
+.wrapper {
+  width: 50%;
+  margin: 15px auto;
+  border: 1px solid $rose;
+  color: $mainColor;
+  padding: 25px;
+  -webkit-box-shadow: 10px 10px 6px -6px $rose;
+  -moz-box-shadow: 10px 10px 6px -6px $rose;
+  box-shadow: 10px 10px 6px -6px $rose;
+}
+
+.textAreaWrapper {
+  @extend .contactInputs;
+  height: 200px;
+
+}
+.inputWrapper {
+  @extend .contactInputs;
+  height: 40px;
+}
+
+.sendButton {
+  @extend .btn;
+  margin: 15px auto;
+  &:hover {
+    background-color: lighten($rose, 10%);
+  }
+}
+
+.disabled {
+  @extend .btn;
+  margin: 15px auto;
+  background-color: $grey;
+}
+
+.error {
+  color: red;
+}
+
+
+.appear {
+  opacity: 0;
+  transform: translateY(-250px);
+}
+
+.appearActive {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+  transform:   translateY(0);
+  transition-property: transform, opacity;
+  transition-duration: 300ms;
+}

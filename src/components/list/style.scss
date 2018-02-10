@@ -1,0 +1,117 @@
+@import '../../styles/globals.scss';
+
+.wrapper {
+	width: 100%;
+}
+
+.title {
+	font-size: 2em;
+	font-style: bold;
+	padding: 15px;
+	color: $rose;
+}
+
+.list {
+	margin-left: 10px;
+}
+
+.item {
+	width: 20%;
+}
+
+.children {
+	display: flex;
+	justify-content: space-between;
+	margin-left: 15px;
+}
+
+.items {
+	list-style: none;
+	padding: 15px;
+	border-bottom: 1px solid $grey;
+	cursor: pointer;
+	color: $shadowGrey;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	&:hover {
+		background-color: $hover;
+	}
+}
+
+.showMore {
+  display: block;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: $white;
+  border: none;
+  color:  $rose;
+  font-size: 12px;
+  cursor: pointer;
+  &:hover {
+    background-color: $hover;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.listItemButton {
+  display: block;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: $mainColor;
+  border: none;
+  color: $white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.enter {
+    opacity: 0;
+    transform:   translate(-250px,0);
+    transform: translate3d(-250px,0,0);
+}
+.enterActive {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+  transform:   translate(0,0);
+  transform: translate3d(0,0,0);
+  transition-property: transform, opacity;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+}
+
+.leave {
+  opacity: 1;
+  transform:   translate(0,0,0);
+  transform: translate3d(0,0,0);
+  transition-property: transform, opacity;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+}
+
+.leaveActive {
+  opacity: 0;
+  transform:   translate(250px,0);
+  transform: translate3d(250px,0,0);
+}
+
+.appear {
+  opacity: 0;
+  transform:   translate(-250px,0);
+  transform: translate3d(-250px,0,0)
+}
+
+.appearActive {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+  transform:   translate(0,0);
+  transform: translate3d(0,0,0);
+  transition-property: transform, opacity;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+}

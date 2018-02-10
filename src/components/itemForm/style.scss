@@ -1,0 +1,60 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+  position: relative;
+}
+
+.editInput {
+  @extend .textarea;
+  border: 1px solid $rose;
+  font-size: 1em;
+  font-style: italic;
+  color: $shadowGrey;
+}
+
+.addInput {
+  @extend .textarea;
+  border: none;
+  color: $rose;
+  font-size: 1em;
+  border: none;
+}
+
+.addButton {
+  @extend .btn;
+  margin: 30px auto;
+  border: 1px solid $white;
+  &:hover {
+    background-color: $white;
+    color: $rose;
+    border: 1px solid $rose;
+  }
+}
+
+.editButton {
+  @extend .btn;
+  border: 1px solid $rose;
+  margin: 10px auto;
+  &:hover {
+    background-color: lighten($rose, 10%);
+    color: $rose;
+  }
+}
+
+.saveButton {
+  @extend .btn;
+  background-color: $mainColor;
+  border: 1px solid $mainColor;
+  margin: 10px auto;
+  &:hover {
+    background-color: lighten($mainColor, 10%);
+    color: $white;
+  }
+}
+
+.disabled {
+  @extend .btn;
+  margin: 30px auto;
+  border: 1px solid $white;
+  background-color: $grey;
+}

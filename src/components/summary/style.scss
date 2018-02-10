@@ -1,0 +1,47 @@
+@import '../../styles/globals.scss';
+
+.wrapper {
+	width: 100%;
+	height: 100px;
+	padding: 15px;
+	position: relative;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-color: $mainColor;
+	@include desktop {
+		display: inline-block;
+		width: 300px;
+	}
+}
+
+.progressTask {
+	margin-bottom: 10px;
+	border: 1px solid $rose;
+	background-color: $white;
+  	border-radius: 5px;
+}
+
+.taskFill {
+  	background-color: $rose;
+	border-radius: 5px
+}
+
+.task {
+	color: $rose;
+	margin-bottom: 5px;
+}
+
+.rating {
+	position: absolute;
+	left: 110px;
+	top: 5px;
+	z-index: 1;
+	@include desktop {
+		position: relative;
+		top: 145px;
+		left: 70px;
+	}
+}
+
