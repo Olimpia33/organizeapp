@@ -58,8 +58,8 @@ class Navbar extends Component {
 						to="contact"
 						className={isClicked ? style.navItemMobile : style.navItem}
             onClick={() => this.closeMenu()}
-            >
-              Contact
+          >
+            Contact
 					</Link>
 				</nav>
 			</div>
