@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import style from './style.scss';
 import ProgressBar from '../../components/progress-bar/index';
-import Rating from '../../components/rating/index';
 import { connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as progressTaskActions from '../../actions/progressTaskActions';
@@ -27,13 +26,10 @@ class Summary extends Component {
 		const { counterTask, tasks } = this.props;
 		const task = tasks.length;
 		const countTask = this.countPercent(counterTask, task);
-	
+
 		return (
 			<div className={style.wrapper}>
-				<div className={style.rating}>
-					<Rating points={task} />
-				</div>
-				<p className={style.task}>Task rating </p>
+				<p className={style.task}>Work in progess ... </p>
 				<ProgressBar
 					width={270}
 					percent={countTask}
@@ -54,7 +50,7 @@ Summary.propTypes = {
   tasks: PropTypes.array.isRequired
 };
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
 	const { tasks } = state;
     const { progressTask: { counter: counterTask } } = state;
     return {

@@ -12,11 +12,11 @@ class Navbar extends Component {
 	}
 
 	handleClick() {
-		const {isClicked} = this.state;
+		const { isClicked } = this.state;
 		this.setState({ isClicked: !isClicked });
 	}
 
-	closeMemnu() {
+	closeMenu() {
 		this.setState({ closeMenu: true });
 	}
 
