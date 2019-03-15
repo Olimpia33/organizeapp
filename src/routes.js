@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, IndexRoute} from 'react-router';
+import { Route, IndexRoute } from 'react-router';
 import App from './screens/App';
 import HomePage from './screens/home/index';
 import OrganizerPage from './screens/organizer/index';

@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import List from '../../components/list/index';
 import globals from '../../styles/globals.scss';
-import ToggleButton from '../../components/toggle-button/index';
 import ModalContainer from '../../components/modal/index';
 import ItemForm from '../../components/itemForm/index';
 import EmptyList from '../../components/emptyList/index';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import * as taskActions from '../../actions/taskActions';
 import * as modalActions from '../../actions/modalActions';
 import * as progressTaskActions from '../../actions/progressTaskActions';
@@ -16,8 +15,8 @@ class TaskContainer extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			task: Object.assign({}, props.task),
-			errors: {title: ''},
+			task: '',
+			errors: { title: '' },
 			isDisabled: true
 		};
 
@@ -29,10 +28,7 @@ class TaskContainer extends Component {
 	}
 
 	onChange(e) {
-		const field = e.target.name;
-		const { task } = this.state;
-		const value = e.target.value;
-		task[field] = value;
+		const task = e.target.value;
 		this.setState({
 			task, 
 			isDisabled: !task
@@ -48,7 +44,7 @@ class TaskContainer extends Component {
 		this.props.modals.hideModal();
 		
 		this.setState({
-			task: {item: ''}
+			task: ''
 		});
 	}
 
@@ -65,19 +61,19 @@ class TaskContainer extends Component {
 		let formIsValid = true;
 		let errors = {};
 
-		if (this.state.task.item.length < 3) {
+		if (this.state.task.length < 3) {
 			errors.title = 'Task must be at least 3 characters.';
 			formIsValid = false;
 		}
 
-		this.setState({errors: errors});
+		this.setState({ errors: errors });
 		return formIsValid;
 	}
 
 	cleanInputAfterModalClose() {
 		this.setState({
-			task: {item: ''},
-			errors:{title:''}
+			task: '', 
+			errors: { title:'' }
 		});
 	}
 
@@ -90,10 +86,9 @@ class TaskContainer extends Component {
 		} = this.state;
 		
 		const { tasks, progressTask } = this.props;
-
 		return (
 			<div>
-				{tasks.length ===  0 ?
+				{tasks.length === 0 ?
 					<EmptyList
 						title="No tasks yet"
 						subtitle="Add new tasks"
@@ -109,7 +104,6 @@ class TaskContainer extends Component {
 						showToggle
 					/>
 				}
-
 				<ModalContainer
 					callback={this.cleanInputAfterModalClose}
 					addButton
@@ -117,7 +111,7 @@ class TaskContainer extends Component {
 					<ItemForm
 						name="item"
 						callback={this.onChange}
-						itemValue={task.item}
+						itemValue={task}
 						addItem={this.addTask}
 						errors={errors.title}
 						buttonName="Add new item"
@@ -140,7 +134,6 @@ TaskContainer.propTypes = {
 
 const mapStateToProps = (state, ownProps) => {
 	const { tasks } = state;
-
     return {
       tasks
     };

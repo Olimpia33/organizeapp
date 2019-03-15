@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import style from './style.scss';
 import ProgressBar from '../../components/progress-bar/index';
 import Rating from '../../components/rating/index';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
 import * as progressTaskActions from '../../actions/progressTaskActions';
 import * as taskActions from '../../actions/taskActions';
 
@@ -43,7 +43,6 @@ class Summary extends Component {
 					text={countTask +'%'}
 				/>
 			</div>
-
 		);
 	}
 }
@@ -59,8 +58,8 @@ const mapStateToProps = (state, ownProps) => {
 	const { tasks } = state;
     const { progressTask: { counter: counterTask } } = state;
     return {
-        counterTask,
-        tasks
+      counterTask,
+      tasks
     };
 };
 

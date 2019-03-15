@@ -1,9 +1,9 @@
 import * as types from './actionTypes';
 
 export const onToggleChangeAsc = () => ({
-	type: types.TASK_INCREMENT
+  type: types.TASK_INCREMENT
 });
 
 export const  onToggleChangeDesc = () => ({
-	type: types.TASK_DECREMENT
+  type: types.TASK_DECREMENT
 });

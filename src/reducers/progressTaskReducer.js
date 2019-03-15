@@ -1,6 +1,6 @@
 import * as types from '../actions/actionTypes';
 
-export default function (state = {counter: 0} , action ) {
+export default function (state = { counter: 0 } , action ) {
 	switch(action.type) {
 		case types.TASK_INCREMENT:
 			return Object.assign({}, state, {

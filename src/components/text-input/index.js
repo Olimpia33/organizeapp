@@ -13,22 +13,23 @@ const TextInput = ({
     callback,
     inputWrapper,
     error,
-    children}) => {
+    children
+  }) => {
     return (
-        <div className={style.input}>
-            <Label htmlFor={htmlId} label={label} required={required} />
-            <input
-                type={type}
-                name={name}
-                value={value}
-                placeholder={placeholder}
-                label={label}
-                onChange={callback}
-                className={`${error && `{style.bordeError}`} ${inputWrapper}`}/>
-                {children}
-                {error && <div className={style.error}>{error}</div>}
-        </div>
-    );
+      <div className={style.input}>
+        <Label htmlFor={htmlId} label={label} required={required} />
+        <input
+          type={type}
+          name={name}
+          value={value}
+          placeholder={placeholder}
+          label={label}
+          onChange={callback}
+          className={`${error && `{style.bordeError}`} ${inputWrapper}`}/>
+          {children}
+          {error && <div className={style.error}>{error}</div>}
+      </div>
+   );
 };
 
 TextInput.propTypes = {

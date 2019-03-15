@@ -5,8 +5,8 @@ import configureStore from './store/configureStore';
 import {Provider}  from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import routes from './routes';
-import {loadTasksList} from './actions/taskActions';
-import {loadNotesList} from './actions/notesActions';
+import { loadTasksList } from './actions/taskActions';
+import { loadNotesList } from './actions/notesActions';
 
 const store = configureStore();
 // store.dispatch(loadTasksList());
