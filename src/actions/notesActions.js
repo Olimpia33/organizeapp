@@ -3,33 +3,33 @@ import fetch from 'isomorphic-fetch';
 
 let createItemId = 0;
 export const createNotesList = list => ({
-    type: types.CREATE_NOTES_LIST,
-    payload: {
-      list
-    }
+  type: types.CREATE_NOTES_LIST,
+  payload: {
+    list
+  }
 });
 
 export const createNewNote = item => ({
-    type: types.CREATE_NEW_NOTE,
-    payload: {
-      item,
-      id: createItemId++
-    }
+  type: types.CREATE_NEW_NOTE,
+  payload: {
+    item,
+    id: createItemId++
+  }
 });
 
-export const updateNotesList = (item, id )=> ({
-    type: types.UPDATE_NOTES_LIST,
-    payload: {
-      item,
-      id
-    }
+export const updateNotesList = (item, id) => ({
+  type: types.UPDATE_NOTES_LIST,
+  payload: {
+    item,
+    id
+  }
 });
 
 export const removeNoteFromList = id => ({
-    type: types.REMOVE_NOTE_FROM_LIST,
-    payload: {
-      id
-    }
+  type: types.REMOVE_NOTE_FROM_LIST,
+  payload: {
+    id
+  }
 });
 
 export const  loadNotesList = () => {
@@ -50,6 +50,6 @@ export const  loadNotesList = () => {
       .then(json => dispatch(createNotesList(json)))
       .catch(err => {
         throw(err);
-      });
+    });
   };
 };

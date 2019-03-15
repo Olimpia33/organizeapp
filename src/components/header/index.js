@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Navbar from '../navbar/index';
 import style from './style.scss';
 
-class Header extends React.Component {
+class Header extends Component {
 	render() {
 		return (
 			<div className={style.wrapper}>

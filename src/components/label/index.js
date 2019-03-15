@@ -5,7 +5,7 @@ import style from './style.scss';
 const Label = ({htmlFor, label, required}) => {
   return (
     <label className={style.label} htmlFor={htmlFor}>
-        {label} {required && <span className={style.alert}>*</span>}
+      {label} {required && <span className={style.alert}>*</span>}
     </label>
   );
 };

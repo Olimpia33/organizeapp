@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import globals from '../../styles/globals.scss';
 import List from '../../components/list/index';
-import Button from '../../components/buttons/index';
 import ModalContainer from '../../components/modal/index';
 import ItemForm from '../../components/itemForm/index';
 import EmptyList from '../../components/emptyList/index';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import * as notesActions from '../../actions/notesActions';
 import * as modalActions from '../../actions/modalActions';
 
@@ -15,8 +13,8 @@ class NotesContainer extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			note: Object.assign({}, props.note),
-			errors: {title: ''},
+			note: '',
+			errors: { title: '' },
 			isDisabled: true
 		};
 
@@ -27,13 +25,11 @@ class NotesContainer extends Component {
 	}
 
 	onHandleChange(e) {
-		const field = e.target.name;
-		const { note } = this.state;
-		const value = e.target.value;
-		note[field] = value;
+		const note = e.target.value;
 		this.setState({
 			note, 
-			isDisabled: !note});
+			isDisabled: !note
+		});
 	}
 
 	addNote (e) {
@@ -45,7 +41,7 @@ class NotesContainer extends Component {
 		this.props.modals.hideModal();
 
 		this.setState({
-			note: {item: ''}
+			note: ''
 		});
 	}
 
@@ -57,36 +53,35 @@ class NotesContainer extends Component {
 		let formIsValid = true;
 		let errors = {};
 
-		const { note: { item}  } = this.state;
+		const { note } = this.state;
 
-		if (item.length < 3) {
+		if (note.length < 3) {
 			errors.title = 'Note must be at least 3 characters.';
 			formIsValid = false;
 		}
 
-		if (item.length > 160) {
+		if (note.length > 160) {
 			errors.title = 'Note must be no more than 160 characters.';
 			formIsValid = false;
 		}
 
-		this.setState({errors: errors});
+		this.setState({ errors: errors });
 		return formIsValid;
 	}
 
 	cleanInputAfterModalClose() {
 		this.setState({
-			note: {item: ''},
-			errors:{title:''}
+			note: '',
+			errors: { title: '' }
 		});
 	}
 
 	render(){
-
 		const { 
 			errors, 
 			note, 
-			isDisabled } 
-			= this.state;
+			isDisabled 
+		} = this.state;
 
 		const { notes } = this.props;
 
@@ -110,12 +105,12 @@ class NotesContainer extends Component {
 					addButton
 				>
 					<ItemForm
-						name="item"
+						name="note"
 						callback={this.onHandleChange}
-						itemValue={note.item}
+						itemValue={note}
 						addItem={this.addNote}
 						errors={errors.title}
-						buttonName="Add new item"
+						buttonName="Add new note"
 						buttonDisabled={isDisabled}
 					/>
 				</ModalContainer>
@@ -131,9 +126,8 @@ NotesContainer.propTypes = {
 	note: PropTypes.array.isRequired
 };
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
 	const { notes } = state;
-
     return {
      notes
     };

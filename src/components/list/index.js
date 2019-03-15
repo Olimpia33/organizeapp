@@ -9,53 +9,53 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 const List = ({
 	title,
 	items,
-	children,
 	deleteItem,
 	onToggleChangeAsc,
 	onToggleChangeDesc,
 	onToggleClick,
 	showToggle,
-	forwardButton}) => (
-	<div className={style.wrapper}>
-		<p className={style.title}>{title}</p>
-		<ul className={style.list}>
-			<ReactCSSTransitionGroup
-				transitionName={style}
-				transitionAppear
-				transitionAppearTimeout={500}
-				transitionEnterTimeout={500}
-				transitionLeaveTimeout={1200}
-			>
-			{items.map(({ id,item, completed }) =>
-				<li key={id} className={style.items}>
-					<div className={style.item}>{item}</div>
-					<div className={style.children}>
-						{showToggle &&
-							<ToggleButton
-								onChangeAsc={onToggleChangeAsc}
-								onChangeDesc={onToggleChangeDesc}
-								completed={completed}
-								onToggleClick={() => onToggleClick(id)}
+	forwardButton
+}) => (
+		<div className={style.wrapper}>
+			<p className={style.title}>{title}</p>
+			<ul className={style.list}>
+				<ReactCSSTransitionGroup
+					transitionName={style}
+					transitionAppear
+					transitionAppearTimeout={500}
+					transitionEnterTimeout={500}
+					transitionLeaveTimeout={1200}
+				>
+					{items.map(({ id,item, completed }) =>
+						<li key={id} className={style.items}>
+							<div className={style.item}>{item}</div>
+							<div className={style.children}>
+								{showToggle &&
+									<ToggleButton
+										onChangeAsc={onToggleChangeAsc}
+										onChangeDesc={onToggleChangeDesc}
+										completed={completed}
+										onToggleClick={() => onToggleClick(id)}
+									/>
+								}
+								{forwardButton &&
+									<Link to={"notes"+id}>
+										<Button
+										value=">>"
+										className={style.showMore}
+										/>
+									</Link>
+								}
+							</div>
+							<Button
+								value="-"
+								className={style.listItemButton}
+								onClick={() => deleteItem(id)}
 							/>
-						}
-						{forwardButton &&
-							<Link to={"notes"+id}>
-								<Button
-								value=">>"
-								className={style.showMore}
-								/>
-							</Link>
-						}
-					</div>
-					<Button
-						value="-"
-						className={style.listItemButton}
-						onClick={() => deleteItem(id)}
-					/>
-				</li>
-			)}
-            </ReactCSSTransitionGroup>
-		</ul>
+						</li>
+					)}
+				</ReactCSSTransitionGroup>
+			</ul>
     </div>
 );
 
