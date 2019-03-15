@@ -31,7 +31,7 @@ class Note extends Component {
   }
 
 	onChange(e) {
-    const note = e.target.name;
+    const note = e.target.value;
 		this.setState({ note });
 	}
 

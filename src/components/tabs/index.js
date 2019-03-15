@@ -5,24 +5,23 @@ import style from './style.scss';
 const Tabs = ({
   data,
   handleClick,
-  tabs,
-  tabClass
+  child,
 }) =>  (
-  <div className={style.main}>
-    <div className={tabs}>
-      {data.map((tab, index) => {
-        return (
-          <div
-              key={tab.id}
-              className={tabClass}
-              onClick={() => handleClick(tab.id)}
-            >
-              {tab.label}
-          </div>
-        );
-      })}
-    </div>
+  <div className={style.tabs}>
+    {data.map(tab => {
+      return (
+        <div
+            key={tab.id}
+            className={style.tab}
+            onClick={() => handleClick(tab.id)}
+          >
+            {tab.label} 
+            <div className={style.badge}>{tab.child}</div>
+        </div>
+      );
+    })}
   </div>
+
 );
 
 Tabs.propTypes = {

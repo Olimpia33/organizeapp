@@ -5,6 +5,7 @@ import globals from '../../styles/globals.scss';
 import ModalContainer from '../../components/modal/index';
 import ItemForm from '../../components/itemForm/index';
 import EmptyList from '../../components/emptyList/index';
+import Summary from '../summary/index';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as taskActions from '../../actions/taskActions';
@@ -104,6 +105,7 @@ class TaskContainer extends Component {
 						showToggle
 					/>
 				}
+				<Summary />
 				<ModalContainer
 					callback={this.cleanInputAfterModalClose}
 					addButton
@@ -114,7 +116,7 @@ class TaskContainer extends Component {
 						itemValue={task}
 						addItem={this.addTask}
 						errors={errors.title}
-						buttonName="Add new item"
+						buttonName="Add new task"
 						textareaWrapper={globals.textareaWrapper}
 						buttonDisabled={isDisabled}
 					/>
@@ -132,7 +134,7 @@ TaskContainer.propTypes = {
 	progressTask: PropTypes.object.isRequired
 };
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
 	const { tasks } = state;
     return {
       tasks
