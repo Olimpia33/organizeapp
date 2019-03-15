@@ -23,7 +23,7 @@ export default function taskReducer(state = [], action) {
             item,
             ...state.slice(index + 1)
           ];
-        }ą
+        }
         return nextState;
     }
     case types.REMOVE_TASK_FROM_LIST: {

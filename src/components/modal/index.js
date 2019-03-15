@@ -63,7 +63,7 @@ ModalContainer.propTypes = {
   addButton: PropTypes.bool
 };
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
   const { modal: { isShowing } } = state;
   return {
     isShowing

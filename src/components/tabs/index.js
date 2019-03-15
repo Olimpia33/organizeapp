@@ -5,7 +5,7 @@ import style from './style.scss';
 const Tabs = ({
   data,
   handleClick,
-  child,
+  child
 }) =>  (
   <div className={style.tabs}>
     {data.map(tab => {
@@ -29,7 +29,8 @@ Tabs.propTypes = {
   handleClick: PropTypes.func.isRequired,
   tabs: PropTypes.string,
   tabClass: PropTypes.string,
-  linkClass: PropTypes.string
+  linkClass: PropTypes.string,
+  child: PropTypes.object
 };
 
 export default Tabs;
