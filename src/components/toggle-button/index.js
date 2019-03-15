@@ -22,9 +22,9 @@ const ToggleButton = ({
     {completed && (
       <div className={style.wrapper} onClick={onChangeDesc}>
         <span
-            className={`${style.toggleButton} ${style.toggleOn}`}
-            onClick={onToggleClick}>
-              <div></div>
+          className={`${style.toggleButton} ${style.toggleOn}`}
+          onClick={onToggleClick}>
+            <div></div>
         </span>
       </div>
       )}

@@ -17,7 +17,8 @@ const ItemForm = ({
   isEdit,
   editItem,
   saveItem,
-  disabled }) =>(
+  disabled 
+}) =>(
   <form className={style.wrapper} onSubmit={onSubmit}>
     <Textarea
       type="text"

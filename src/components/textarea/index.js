@@ -20,20 +20,20 @@ const Textarea = ({
   }) => {
     return (
       <div className={style.input}>
-          <Label htmlFor={htmlId} label={label} required={required} />
-          <textarea
-            type={type}
-            name={name}
-            value={value}
-            placeholder={placeholder}
-            label={label}
-            onChange={callback}
-            maxLength={maxLength}
-            className={`${error && `{style.bordeError}`} ${textareaWrapper}`}
-            disabled={disabled}
-          />
-          {children}
-          {error && <div className={style.error}>{error}</div>}
+        <Label htmlFor={htmlId} label={label} required={required} />
+        <textarea
+          type={type}
+          name={name}
+          value={value}
+          placeholder={placeholder}
+          label={label}
+          onChange={callback}
+          maxLength={maxLength}
+          className={`${error && `{style.bordeError}`} ${textareaWrapper}`}
+          disabled={disabled}
+        />
+        {children}
+        {error && <div className={style.error}>{error}</div>}
       </div>
     );
 };

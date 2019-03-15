@@ -7,11 +7,11 @@ const Modal = ({isOpen, close, children }) => (
   <div>
     {isOpen &&
       <ReactCSSTransitionGroup
-          transitionName={style}
-          transitionAppear
-          transitionAppearTimeout={300}
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}
+        transitionName={style}
+        transitionAppear
+        transitionAppearTimeout={300}
+        transitionEnterTimeout={300}
+        transitionLeaveTimeout={300}
       >
         <div className={style.modal} key={children}>
           <div className={style.content}>

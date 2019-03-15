@@ -55,19 +55,19 @@ class ModalContainer extends React.Component {
 }
 
 ModalContainer.propTypes = {
-    actions: PropTypes.object.isRequired,
-    isShowing: PropTypes.bool.isRequired,
-    disabled: PropTypes.bool,
-    callback: PropTypes.func,
-    children: PropTypes.object,
-    addButton: PropTypes.bool
+  actions: PropTypes.object.isRequired,
+  isShowing: PropTypes.bool.isRequired,
+  disabled: PropTypes.bool,
+  callback: PropTypes.func,
+  children: PropTypes.object,
+  addButton: PropTypes.bool
 };
 
 const mapStateToProps = (state, ownProps) => {
-    const { modal: { isShowing } } = state;
-    return {
-      isShowing
-    };
+  const { modal: { isShowing } } = state;
+  return {
+    isShowing
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {

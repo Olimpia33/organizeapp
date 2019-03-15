@@ -87,36 +87,36 @@ class ContactForm extends Component {
         <div className={style.wrapper}>
           <form onSubmit={this.handleSubmit}>
             <TextInput
-                type="text"
-                label="Name"
-                name="name"
-                value={this.state.name}
-                inputWrapper={style.inputWrapper}
-                callback={this.handleChange}
-                error={this.state.formErrors.name}
+              type="text"
+              label="Name"
+              name="name"
+              value={this.state.name}
+              inputWrapper={style.inputWrapper}
+              callback={this.handleChange}
+              error={this.state.formErrors.name}
             />
             <TextInput
-                type="text"
-                label="Mail"
-                name="mail"
-                value={this.state.mail}
-                inputWrapper={style.inputWrapper}
-                callback={this.handleChange}
-                error={this.state.formErrors.mail}
+              type="text"
+              label="Mail"
+              name="mail"
+              value={this.state.mail}
+              inputWrapper={style.inputWrapper}
+              callback={this.handleChange}
+              error={this.state.formErrors.mail}
             />
             <TextArea
-                label="Message"
-                name="message"
-                value={this.state.messsage}
-                textareaWrapper={style.textAreaWrapper}
-                callback={this.handleChange}
-                error={this.state.formErrors.message}
+              label="Message"
+              name="message"
+              value={this.state.messsage}
+              textareaWrapper={style.textAreaWrapper}
+              callback={this.handleChange}
+              error={this.state.formErrors.message}
             />
             <Button
-                value="Send"
-                className={!this.state.formValid 
-                    ? style.disabled : style.sendButton}
-                disabled={!this.state.formValid}
+              value="Send"
+              className={!this.state.formValid 
+                ? style.disabled : style.sendButton}
+              disabled={!this.state.formValid}
             />
           </form>
         </div>
